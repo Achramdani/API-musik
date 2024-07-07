@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Musik</title>
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymity" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">API Musik</h1>
+        <h5 class="text-center mt-3 mb-5">Berikut beberapa endpoint API Musik yang tersedia di aplikasi ini</h5>
+
+        <table class="table table-striped ">
+            <thead class="table-dark">
+                <tr>
+                    <th>No</th>
+                    <th>Endpoint</th>
+                    <th>Description</th>
+                    <th>Url</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Artis</td>
+                    <td>Menampilkan data postingan</td>
+                    <td>/api/artis/</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Artis Detail</td>
+                    <td>Menampilkan detail postingan</td>
+                    <td>/api/artis/int:pk/</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Album</td>
+                    <td>Menampilkan data album</td>
+                    <td>/api/album/</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Album Detail</td>
+                    <td>Menampilkan detail album</td>
+                    <td>/api/album/int:pk/</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Lagu</td>
+                    <td>Menampilkan data lagu</td>
+                    <td>/api/lagu/</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Lagu Detail</td>
+                    <td>Menampilkan detail lagu</td>
+                    <td>/api/lagu/int:pk/</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Playlist</td>
+                    <td>Menampilkan data playlist</td>
+                    <td>/api/playlist/</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Playlist Detail</td>
+                    <td>Menampilkan detail playlist</td>
+                    <td>/api/playlist/int:pk/</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

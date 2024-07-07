@@ -9,15 +9,15 @@ class Artis(models.Model):
     
 class Album(models.Model):
     judul = models.CharField(max_length=100)
-    artis = models.ForeignKey(Artis, on_delete=models.CASCADE,related_name='album')
+    artis = models.ForeignKey(Artis, on_delete=models.CASCADE)
     tahun_rilis = models.IntegerField()
     
     def _str_(self):
-        return self.artis.nama
+        return self.judul
     
 class Lagu(models.Model):
     judul = models.CharField(max_length=100)
-    album = models.ForeignKey(Album, on_delete=models.CASCADE,related_name='lagu')
+    album = models.ForeignKey(Album, on_delete=models.CASCADE)
     durasi = models.DurationField()
     
     def _str_(self):
@@ -25,7 +25,7 @@ class Lagu(models.Model):
     
 class Playlist(models.Model):
     nama = models.CharField(max_length=100)
-    lagu = models.ManyToManyField(Lagu,related_name='playlist')
+    lagu = models.ManyToManyField(Lagu)  
     
     def _str_(self):
         return self.nama
