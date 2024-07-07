@@ -1,7 +1,15 @@
 from rest_framework import serializers
 from music_app.models import Artis,Album,Lagu,Playlist
+from django.contrib.auth.models import User
 
-
+class UserSerilizer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id','username','email','password']
+        extra_kwargs = {
+            'password': {'write_only': True}
+        }
+        
 class PlaylistSerilizer(serializers.ModelSerializer):
     class Meta:
         model = Playlist

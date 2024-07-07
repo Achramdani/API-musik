@@ -1,11 +1,19 @@
 from music_app.models import Artis,Album,Lagu,Playlist
-from music_app.serializers import ArtisSerilizer,AlbumSerilizer,LaguSerilizer,PlaylistSerilizer
+from music_app.serializers import ArtisSerilizer,AlbumSerilizer,LaguSerilizer,PlaylistSerilizer,UserSerilizer
 from rest_framework import generics
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.shortcuts import render
+from rest_framework import viewsets
+from django.contrib.auth.models import User
+
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerilizer
 
 class ArtistList(generics.ListCreateAPIView):
     queryset = Artis.objects.all()
